@@ -35,6 +35,19 @@ export default function ContactForm() {
     };
     dispatch(addnewdetail(details));
   };
+
+
+
+  const clear=()=>{
+
+    setfirstname('')
+    setlastname('')
+    setadress('')
+    settown('')
+    setcontry('')
+    setdatebirth('')
+  };
+
   return (
     <div className={classes.root}>
       <p>Personal Details</p>
@@ -50,6 +63,7 @@ export default function ContactForm() {
             id="outlined-required"
             label="First name"
             size="small"
+            value={firstname}
           />
         </div>
         <div style={{ display: "block", textAlign: "start" }}>
@@ -63,6 +77,7 @@ export default function ContactForm() {
             id="outlined-required"
             label="Last name"
             size="small"
+            value={lastname}
           />
         </div>
       </div>
@@ -82,6 +97,7 @@ export default function ContactForm() {
           id="outlined-required"
           label="Adress"
           size="small"
+          value={adress}
         />
       </div>
       <div style={{ display: "block", width: "100%", textAlign: "start" }}>
@@ -99,6 +115,7 @@ export default function ContactForm() {
           id="outlined-required"
           label="Town"
           size="small"
+          value={town}
         />
       </div>
       <div style={{ display: "block", width: "100%", textAlign: "start" }}>
@@ -116,6 +133,7 @@ export default function ContactForm() {
           id="outlined-required"
           label="Town"
           size="small"
+          value={contry}
         />
       </div>
       <div style={{ display: "block", width: "100%", textAlign: "start" }}>
@@ -133,6 +151,7 @@ export default function ContactForm() {
           id="outlined-required"
           label="Date of Birth"
           size="small"
+          value={datebirth}
         />
       </div>
       <div
@@ -147,7 +166,7 @@ export default function ContactForm() {
         <Button onClick={save} variant="contained">
           Save
         </Button>
-        <Button variant="outlined">Clear</Button>
+        <Button onClick={clear} variant="outlined">Clear</Button>
       </div>
     </div>
   );
