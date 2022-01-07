@@ -43,10 +43,17 @@ export const counterSlice = createSlice({
       let filterdetail = state.PersonalDetails.filter((item) => item.id == 1);
       console.log(filterdetail);
     },
+    removedetail: (state, action) => {
+      let filtrage = state.PersonalDetails.filter(
+        (item) => item.id != action.payload
+      );
+      state.PersonalDetails = filtrage;
+      console.log(filtrage)
+    },
   },
 });
 
-export const { addnewdetail ,editdetail} = counterSlice.actions;
+export const { addnewdetail, editdetail, removedetail } = counterSlice.actions;
 
 // The function below is called a selector and allows us to select a value from
 // the state. Selectors can also be defined inline where they're used instead of
